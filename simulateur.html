@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles-simulateur.css">
+  <title>Simulateur de prix - Mon Bureau Tout Propre</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo Mon Bureau Tout Propre" width="100">
+      <h1>Simulateur de prix - Mon Bureau Tout Propre</h1>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="tarifs.html">Tarifs</a></p>
+        <li><a href="simulateur.html">Accéder au simulateur</a></p>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <p>Choisissez combien de fois par semaine vous souhaitez chaque service :</p>
+
+    <form id="priceForm">
+      <label>
+        Nettoyage des bureaux (5€/fois) :
+        <input type="number" id="bureaux" value="0">
+      </label>
+      <br>
+
+      <label>
+        Nettoyage des fenêtres (5€/fois) :
+        <input type="number" id="fenetres" value="0">
+      </label>
+      <br>
+
+      <label>
+        Nettoyage des sols (15€/fois) :
+        <input type="number" id="sols" value="0">
+      </label>
+      <br>
+
+      <label>
+        Nettoyage de la cuisine (10€/fois) :
+        <input type="number" id="cuisine" value="0">
+      </label>
+      <br>
+
+      <label>
+        Nettoyage des toilettes (20€/fois) :
+        <input type="number" id="toilettes" value="0">
+      </label>
+      <br>
+
+      <h2>Total HT : <span id="total">0</span> €</h2>
+      <h2>Total TTC (20% TVA) : <span id="totalTTC">0</span> €</h2>
+  </div>
+  <br>
+  <button type="button" onclick="calculerUnPrix()">Calculer le prix</button>
+  </form>
+  <br>
+  <footer>
+    <p>&copy; 2025 Mon Bureau Tout Propre</p>
+  </footer>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
