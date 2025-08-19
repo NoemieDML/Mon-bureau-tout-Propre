@@ -1,34 +1,31 @@
-function calculerUnPrix() {
-  // Cette fonction calcule le prix total d’un service ou produit selon plusieurs critères (bureaux, fenêtres, sols, etc.)
+function calculer() {
+  // Récupération des valeurs
+  var surface = parseFloat(document.getElementById("surface").value) || 0;
+  var frequence = document.getElementById("frequence").value;
+  var vitres = document.querySelector('input[name="vitres"]:checked')?.value;
 
-  var bureaux = parseInt(document.getElementById("bureaux").value) || 0;
-  // Récupère la valeur de l'élément avec l'ID "bureaux", la convertit en entier.
-  // Si ce n'est pas un nombre, on prend 0 par défaut.
+  // A. Tarif de base
+  var prixBase = surface * 1.5;
 
-  var fenêtres = parseInt(document.getElementById("fenetres").value) || 0;
-  // Idem pour "fenêtres"
+  // B. Majoration selon la fréquence
+  var multiplicateur = 1;
+  if (frequence === "1x_semaine") multiplicateur = 1;
+  else if (frequence === "2x_semaine") multiplicateur = 2;
+  else if (frequence === "tous_les_jours") multiplicateur = 5;
 
-  var sols = parseInt(document.getElementById("sols").value) || 0;
-  // Idem pour "sols"
+  var totalHT = prixBase * multiplicateur;
 
-  var cuisine = parseInt(document.getElementById("cuisine").value) || 0;
-  // Idem pour "cuisine"
+  // C. Options supplémentaires (vitres incluses)
+  if (vitres === "oui") {
+    totalHT *= 1.1; // +10%
+  }
 
-  var toilettes = parseInt(document.getElementById("toilettes").value) || 0;
-  // Idem pour "toilettes"
+  // D. Calcul TVA et TTC
+  var tva = totalHT * 0.2; // TVA = 20% du HT
+  var totalTTC = totalHT + tva; // TTC = HT + TVA
 
-  var totalHT =
-    bureaux * 5 + fenêtres * 5 + sols * 15 + cuisine * 10 + toilettes * 20;
-  // Calcule le total hors taxes (HT) en multipliant chaque quantité par son prix unitaire
-  // Bureaux et fenêtres = 5€ chacun, sols = 15€, cuisine = 10€, toilettes = 20€
-
-  var totalTTC = totalHT * 1.2;
-  // Calcule le total toutes taxes comprises (TTC) en ajoutant 20% de TVA
-
-  document.getElementById("total").innerHTML = totalHT + "€";
-  // Affiche le total HT dans l’élément avec l’ID "total"
-
-  document.getElementById("totalTTC").innerHTML = totalTTC.toFixed(2);
-  // Affiche le total TTC dans l’élément avec l’ID "totalTTC"
-  // toFixed(2) permet de limiter l’affichage à deux chiffres après la virgule
+  // Affichages
+  document.getElementById("total").innerText = totalHT + " €";
+  document.getElementById("tva").innerText = tva + " €";
+  document.getElementById("totalTTC").innerText = totalTTC + " €";
 }

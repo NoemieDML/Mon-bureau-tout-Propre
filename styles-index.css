@@ -5,6 +5,11 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
 }
+
+main {
+  flex: 1; /* prend tout l'espace disponible entre header et footer */
+}
+
 /* Style du header */
 header {
   background-color: #ffcfda;

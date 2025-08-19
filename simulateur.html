@@ -28,42 +28,34 @@
   <div class="container">
     <p>Choisissez combien de fois par semaine vous souhaitez chaque service :</p>
 
-    <form id="priceForm">
-      <label>
-        Nettoyage des bureaux (5€/fois) :
-        <input type="number" id="bureaux" value="0">
-      </label>
-      <br>
+    <form class="container">
+      <label for="surface">Surface des bureaux (m²) :</label>
+      <input type="number" id="surface" name="surface" min="0" required>
 
-      <label>
-        Nettoyage des fenêtres (5€/fois) :
-        <input type="number" id="fenetres" value="0">
-      </label>
-      <br>
+      <label for="frequence">Fréquence du nettoyage :</label>
+      <select id="frequence" name="frequence" required>
+        <option value="">-- Sélectionnez --</option>
+        <option value="1x_semaine">Une fois par semaine</option>
+        <option value="2x_semaine">Deux fois par semaine</option>
+        <option value="tous_les_jours">Tous les jours</option>
+      </select>
 
-      <label>
-        Nettoyage des sols (15€ /fois) :
-        <input type="number" id="sols" value="0">
-      </label>
-      <br>
-
-      <label>
-        Nettoyage de la cuisine (10€/fois) :
-        <input type="number" id="cuisine" value="0">
-      </label>
-      <br>
-
-      <label>
-        Nettoyage des toilettes (20€/fois) :
-        <input type="number" id="toilettes" value="0">
-      </label>
-      <br>
+      <label>Vitres incluses :</label>
+      <div class="radio-group">
+        <label><input type="radio" name="vitres" value="oui" required> Oui</label>
+        <label><input type="radio" name="vitres" value="non"> Non</label>
+      </div>
 
       <h2>Total HT : <span id="total">0</span> €</h2>
-      <h2>Total TTC (20% TVA) : <span id="totalTTC">0</span> €</h2>
+      <h2>TVA (20%) : <span id="tva">0</span> €</h2>
+      <h2>Total TTC : <span id="totalTTC">0</span> €</h2>
+
+
+      <button type="button" onclick="calculer()">Calculer le prix</button>
+    </form>
   </div>
   <br>
-  <button type="button" onclick="calculerUnPrix()">Calculer le prix</button>
+
   </form>
   <br>
   <footer>
