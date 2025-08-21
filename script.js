@@ -25,7 +25,7 @@ function calculer() {
   var totalTTC = totalHT + tva; // TTC = HT + TVA
 
   // Affichages
-  document.getElementById("total").innerText = totalHT + " €";
-  document.getElementById("tva").innerText = tva + " €";
-  document.getElementById("totalTTC").innerText = totalTTC + " €";
+  document.getElementById("total").innerText = totalHT;
+  document.getElementById("tva").innerText = tva;
+  document.getElementById("totalTTC").innerText = totalTTC;
 }

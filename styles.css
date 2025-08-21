@@ -55,6 +55,101 @@ header nav ul li a:hover {
   text-decoration: underline;
 }
 
+.sec1,
+.sec2 {
+  float: left; /* les place les unes à côté des autres */
+  width: 48%; /* chacune prend presque la moitié */
+  margin: 1%; /* espace entre les colonnes */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box; /* inclut padding et margin dans la largeur */
+}
+
+/* Titres */
+.sec1 h2,
+.sec2 h2 {
+  margin-top: 0;
+  color: #333333;
+  font-size: 20px;
+}
+
+/* Liste sec1 */
+.sec1 ul {
+  padding-left: 20px;
+  margin: 10px 0 0 0;
+}
+
+/* Paragraphe sec2 */
+.sec2 p {
+  margin-top: 10px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+/* Responsive : empile les sections sur petits écrans */
+@media (max-width: 700px) {
+  .sec1,
+  .sec2 {
+    width: 100%;
+    float: none;
+    margin: 10px 0;
+  }
+}
+
+main {
+  padding: 10px 30px;
+}
+
+.simulateur {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.1);
+  margin: 60px;
+  padding: 20px;
+}
+
+.intro {
+  text-align: center;
+}
+
+/* Style de la card tarifs */
+.tarifs {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  margin: 30px auto; /* centre la card */
+  font-family: Arial, sans-serif;
+}
+
+/* Enlève les puces de la liste */
+.tarifs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Chaque ligne de tarif */
+.tarifs ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Retire la bordure du dernier élément */
+.tarifs ul li:last-child {
+  border-bottom: none;
+}
+
+/* Met en valeur le nom du service */
+.tarifs ul li strong {
+  color: #000000;
+}
+
 /* Conteneur qui centre */
 .container {
   display: flex;
