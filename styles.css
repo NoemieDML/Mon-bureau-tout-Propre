@@ -301,6 +301,15 @@ button:hover {
   }
 }
 
+/* Styles pour mobile */
+@media (max-width: 600px) {
+  .simulateur {
+    margin: 20px; /* réduit l'espace autour */
+    padding: 15px; /* réduit l'espace intérieur */
+    border-radius: 8px; /* un peu moins arrondi si tu veux */
+  }
+}
+
 footer {
   text-align: center;
   background-color: #ffcfda;
